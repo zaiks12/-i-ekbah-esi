@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #ffe4e1;
+    padding: 20px;
+    position: relative;
+}
+
+header h1 {
+    color: #b51f1f;
+}
+
+header p {
+    color: #333;
+    font-size: 1.2em;
+}
+
+/* Hamburger Menu - 3 horizontal lines */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Show hamburger icon on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Side Menu for "Destek Ekibi" */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially hidden on the right */
+    width: 250px;
+    height: 100%;
+    background-color: #f5f5f5;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.side-menu.open {
+    right: 0; /* Slide in from the right */
+}
+
+.menu-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-content p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Product Section */
+.urunler {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    gap: 10px;
+}
+
+.urun {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.urun img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.urun p {
+    margin: 10px 0 0;
+}
+
+.urun:hover {
+    transform: scale(1.05);
+}
+
+/* Media queries for responsive layout */
+@media (max-width: 768px) {
+    .urun {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .urun {
+        flex: 1 1 100%;
+    }
+}
